@@ -386,6 +386,7 @@ class ParameterSpaceIterationTest(unittest.TestCase):
         self.assertEqual(results_label, ['name.y', 'x'])
         indices = [ps7.parameter_space_index(experiment)
                    for experiment in ps7.iter_inner()]
+        indices.sort()
         self.assertEqual(indices, [(0, 0), (0, 1), (1, 0), (1, 1)])
         self.assertEqual(
             ps7.parameter_space_index(

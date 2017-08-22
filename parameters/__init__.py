@@ -474,7 +474,7 @@ class ParameterSet(dict):
         if isinstance(ps, ParameterSet):
             return ps[split[1]]
         else: 
-            raise KeyError, "invalid parameter path for ParameterSet: %s" % name
+            raise KeyError("invalid parameter path for ParameterSet: %s" % name)
 
     def flat_add(self, name, value):
         """ Like `__setitem__`, but it will add `ParameterSet({})` objects
@@ -507,7 +507,7 @@ class ParameterSet(dict):
 
     def update(self, E, **F):
         """docstring missing"""
-        if hasattr(E, "has_key"):
+        if hasattr(E, "has_key") or hasattr(E, "keys"):
             for k in E:
                 self[k] = E[k]
         else:

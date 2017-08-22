@@ -219,7 +219,7 @@ class ParameterSchema(ParameterSet):
         if isinstance(ps, ParameterSet):
             return ps[split[1]]
         else: 
-            raise KeyError, "invalid parameter path for ParameterSet: %s" % name
+            raise KeyError("invalid parameter path for ParameterSet: %s" % name)
 
 
 

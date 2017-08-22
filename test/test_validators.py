@@ -341,7 +341,7 @@ class ParameterSchemeTest(unittest.TestCase):
         """
 
         def write_to_yaml_tf(s):
-            tf = tempfile.NamedTemporaryFile(suffix='.yaml')
+            tf = tempfile.NamedTemporaryFile(suffix='.yaml', mode='w')
             tf.writelines(s)
             tf.flush()
             tf.seek(0)
